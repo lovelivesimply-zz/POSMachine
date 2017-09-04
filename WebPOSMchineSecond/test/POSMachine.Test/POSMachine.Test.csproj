@@ -61,11 +61,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ResourceFactBase.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="POSMachineFact.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\POSMachine\POSMachine.csproj">
+      <Project>{b3b4cd63-de3d-4f01-a7dc-52dc36e27bc5}</Project>
+      <Name>POSMachine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
