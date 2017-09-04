@@ -3,6 +3,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Web.Http;
+using Newtonsoft.Json.Linq;
+
 namespace POSMachine.Test
 {
     public class ResourceFactBase:IDisposable
@@ -13,9 +15,14 @@ namespace POSMachine.Test
 
         readonly StringContent httpContent;
 
-        public StringContent GetHttpContent(string json)
+        public StringContent GetHttpContent(JArray json=null)
         {
-            var httpContent = new StringContent(json, Encoding.UTF8);
+            var paramater ="";
+            if (json != null)
+            {
+                paramater = json.ToString();
+            }
+            var httpContent = new StringContent(paramater, Encoding.UTF8);
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             return httpContent;
         }
