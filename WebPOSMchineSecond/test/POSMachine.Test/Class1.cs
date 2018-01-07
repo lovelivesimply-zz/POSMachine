@@ -8,5 +8,6 @@ namespace POSMachine.Test
 {
     public class Class1
     {
+
     }
 }
